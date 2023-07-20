@@ -33,11 +33,11 @@ const user = useSelector((state)=>state.user);
 const isNonMobileScreens = useMediaQuery("(min-width: 1000px)");
 
 const theme = useTheme();
-const neutralLight = theme.pallette.neutral.light;
-const dark = theme.pallette.neutral.dark;
-const background = theme.pallette.background.default;
-const primaryLight = theme.pallette.primary.light;
-const alt = theme.pallette.background.alt;
+const neutralLight = theme.palette.neutral.light;
+const dark = theme.palette.neutral.dark;
+const background = theme.palette.background.default;
+const primaryLight = theme.palette.primary.light;
+const alt = theme.palette.background.alt;
 
 const fullName = `${user.firstName} ${user.lastName}`;
 
@@ -74,7 +74,7 @@ const fullName = `${user.firstName} ${user.lastName}`;
         {isNonMobileScreens ? (
             <FlexBetween gap ="2rem" >
                 <IconButton onClick = {() => dispatch(setMode())}>
-                  {theme.pallette.mode ==="dark" ?(
+                  {theme.palette.mode ==="dark" ?(
                     <DarkMode sx ={{ fontSize: "25px"}}/>
                   ):(
                     <LightMode sx ={{color:dark, fontSize: "25px"}}/>

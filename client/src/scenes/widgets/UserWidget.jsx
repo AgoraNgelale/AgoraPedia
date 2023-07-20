@@ -15,12 +15,12 @@ import { useNavigate } from "react-router-dom";
 
 const UserWidget = ({userId, picturePath}) => {
     const [user,setUser] = useState(null);
-    const {pallette} = useTheme();
+    const {palette} = useTheme();
     const navigate = useNavigate();
     const token = useSelector((state)=>state.token);
-    const dark = pallette.neutral.dark;
-    const medium = pallette.neutral.medium;
-    const main = pallette.neutral.main;
+    const dark = palette.neutral.dark;
+    const medium = palette.neutral.medium;
+    const main = palette.neutral.main;
 
     console.log(userId);
 
@@ -64,7 +64,7 @@ const UserWidget = ({userId, picturePath}) => {
                 onClick = {()=>navigate(`/profile/${userId}`)}
             >
                 <FlexBetween gap = "1rem">
-                    <UserImage image = {picturePath}/>
+                    <UserImage image = {`../../assets/${picturePath}`}/>
                     <Box>
                         <Typography
                             variant ="h4"
@@ -72,7 +72,7 @@ const UserWidget = ({userId, picturePath}) => {
                             fontWeight = "500"
                             sx ={{
                                 "&:hover" : {
-                                    color: pallette.primary.light,
+                                    color: palette.primary.light,
                                     cursor: "pointer"
                                 }
                             }}
@@ -80,9 +80,10 @@ const UserWidget = ({userId, picturePath}) => {
 
                             {firstName} {lastName}
                         </Typography>
-                        {/**<Typography color ={medium}>{friends.length} friends</Typography>*/}
+                        <Typography color ={medium}>{friends.length} friends</Typography>
                     </Box>
-                    <ManageAccountsOutlined/>
+                </FlexBetween>
+                <ManageAccountsOutlined/>
                 </FlexBetween>
                 <Divider/>
 
@@ -98,6 +99,7 @@ const UserWidget = ({userId, picturePath}) => {
                     </Box>
 
                 </Box>
+                <Divider/>
                 {/** THIRD ROW */}
                 <Box p ="1rem 0">
                     <FlexBetween mb = "0.5rem">
@@ -113,6 +115,7 @@ const UserWidget = ({userId, picturePath}) => {
                         </Typography>
                     </FlexBetween>
                 </Box>
+                <Divider/>
 
                 {/** FOURTH ROW */}
                 <Box p ="1rem 0">
@@ -146,7 +149,6 @@ const UserWidget = ({userId, picturePath}) => {
                     </FlexBetween>
 
                 </Box>
-            </FlexBetween>
         </WidgetWrapper>
     )
 }

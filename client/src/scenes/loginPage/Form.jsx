@@ -51,7 +51,7 @@ const initialValuesLogin ={
 
 const Form = () => {
 const [pageType, setPageType] = useState("login");
-const {pallette} = useTheme();
+const {palette} = useTheme();
 const dispatch = useDispatch();
 const navigate = useNavigate();
 const isNonMobile = useMediaQuery("(min-width: 600px)");
@@ -179,13 +179,13 @@ return (
                         />
                         <Box
                             gridColumn ="span 4"
-                            border = {`1px solid ${pallette.neutral.medium}`}
+                            border = {`1px solid ${palette.neutral.medium}`}
                             borderRadius ="5px"
                             p="1rem"
                         >
                                 <Dropzone 
                                     acceptedFiles = ".jpg, .jpeg, .png"
-                                    multple = {false}
+                                    multiple = {false}
                                     onDrop = {(acceptedFiles) =>
                                         setFieldValue("picture", acceptedFiles[0])
                                     }
@@ -193,7 +193,7 @@ return (
                                     {({getRootProps, getInputProps}) =>(
                                         <Box
                                             {...getRootProps()}
-                                            border ={`2px dashed ${pallette.primary.main}`}
+                                            border ={`2px dashed ${palette.primary.main}`}
                                             p = "1rem"
                                             sx ={{"&:hover" : {cursor: "pointer"}}}
                                         >
@@ -249,9 +249,9 @@ return (
                         sx = {{
                             m: "2rem 0",
                             p: "1rem",
-                            backgroundColor: pallette.primary.main,
-                            color: pallette.background.alt,
-                            "&:hover" : {color: pallette.primary.main},
+                            backgroundColor: palette.primary.main,
+                            color: palette.background.alt,
+                            "&:hover" : {color: palette.primary.main},
                         }}
                     >
                         {isLogin ? "LOGIN" : "REGISTER"}
@@ -263,10 +263,10 @@ return (
                             }}
                             sx={{
                                 textDecortion: "underline",
-                                color: pallette.primary.main,
+                                color: palette.primary.main,
                                 "&:hover" : {
                                     cursor: "pointer",
-                                    color: pallette.primary.light,
+                                    color: palette.primary.light,
                                 }
                             }}
                         >
