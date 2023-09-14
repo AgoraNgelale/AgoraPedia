@@ -53,7 +53,7 @@ import {
           friendId={postUserId}
           name={name}
           subtitle={location}
-          userPicturePath={`${userPicturePath}`}
+          userPicturePath={userPicturePath}
         />
         <Typography color={main} sx={{ mt: "1rem" }}>
           {description}

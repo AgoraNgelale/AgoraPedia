@@ -23,18 +23,18 @@ const Friend = ({friendId, name, subtitle, userPicturePath}) => {
 
     const patchFriend = async () => {
         const response = await fetch(
-            `http://localhost:3001/users/${_id}/${friendId}`,
-            {
-                method: "PATCH",
-                headers: {
-                    Authorization: `Bearer ${token}`,
-                    "Content-Type": "application/json"
-                }
-            }
+          `http://localhost:3001/users/${_id}/${friendId}`,
+          {
+            method: "PATCH",
+            headers: {
+              Authorization: `Bearer ${token}`,
+              "Content-Type": "application/json",
+            },
+          }
         );
         const data = await response.json();
-        dispatch(setFriends({friends: data}));
-    }
+        dispatch(setFriends({ friends: data }));
+      };
 
     return(
         <FlexBetween>

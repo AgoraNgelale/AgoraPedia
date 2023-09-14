@@ -18,14 +18,17 @@ const token = useSelector((state)=> state.token);
   };
 
 const  getUserPosts = async () =>{
-    const response = fetch(`http://localhost:3001/posts/${userId}/posts`, {
+    const response = await fetch(
+      `http://localhost:3001/posts/${userId}/posts`,
+      {
         method: "GET",
-        headers: {Authorization: `Bearer ${token}` },
-    });
-
+        headers: { Authorization: `Bearer ${token}` },
+      }
+    );
     const data = await response.json();
     dispatch(setPosts({posts:data}));
 };
+
 
 useEffect (()=>{
     if(isProfile){
@@ -58,7 +61,7 @@ return(
           description={description}
           location={location}
           picturePath={picturePath}
-          userPicturePath={userPicturePath}
+          userPicturePath={`../../../assets/${userPicturePath}`}
           likes={likes}
           comments={comments}
         />

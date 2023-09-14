@@ -58,7 +58,7 @@ const fullName = `${user.firstName} ${user.lastName}`;
                 },
             }}
             >
-                Sociopedia
+                AgoraPedia
             </Typography>
             {/**SEARCH BAR & ICON FOR NON MOBILE SCREENS */}
             {isNonMobileScreens && (
