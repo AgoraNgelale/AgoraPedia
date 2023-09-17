@@ -6,6 +6,7 @@ import User from "../models/User.js";
 /** REGISTER USER */
 export const register = async (req, res)=> {
     try{
+        const bcrypt = require('bcryptjs');
         const{
             firstName, 
             lastName,
