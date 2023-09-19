@@ -83,7 +83,7 @@ const register = async(values, onSubmitProps) =>{
 const login = async(values, onSubmitProps) =>{
     //this
     const loggedInResponse = await fetch(
-        "http://localhost:10000/auth/login",
+        "https://agorapedia.onrender.com/auth/login",
         {
             method: "POST",
             headers: {"Content-Type": "application/json"},
