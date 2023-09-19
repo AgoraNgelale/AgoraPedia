@@ -66,7 +66,7 @@ const register = async(values, onSubmitProps) =>{
     }
     formData.append("picturePath", values.picture.name);
     const savedUserResponse = await  fetch(
-        "http://localhost:10000/auth/register",
+        "https://agorapedia.onrender.com/auth/register",
         {
             method: "POST",
             body: formData,

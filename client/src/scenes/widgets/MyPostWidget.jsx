@@ -46,7 +46,7 @@ const MyPostWidget = ({picturePath}) => {
             formData.append("picturePath", `../../assets/${image.name}`);
         }
 
-        const response = await fetch(`http://localhost:10000/posts`,{
+        const response = await fetch(`https://agorapedia.onrender.com/posts`,{
             method: "POST",
             headers: {Authorization: `Bearer ${token}`},
             body: formData,
