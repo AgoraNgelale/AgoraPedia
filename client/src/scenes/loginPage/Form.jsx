@@ -66,7 +66,7 @@ const register = async(values, onSubmitProps) =>{
     }
     formData.append("picturePath", values.picture.name);
     const savedUserResponse = await  fetch(
-        "http://localhost:3001/auth/register",
+        "http://localhost:10000/auth/register",
         {
             method: "POST",
             body: formData,
@@ -83,7 +83,7 @@ const register = async(values, onSubmitProps) =>{
 const login = async(values, onSubmitProps) =>{
     //this
     const loggedInResponse = await fetch(
-        "http://localhost:3001/auth/login",
+        "http://localhost:10000/auth/login",
         {
             method: "POST",
             headers: {"Content-Type": "application/json"},
