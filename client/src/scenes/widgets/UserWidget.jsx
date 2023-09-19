@@ -25,7 +25,7 @@ const UserWidget = ({userId, picturePath}) => {
     console.log(userId);
 
     const getUser = async () =>{
-        const response = await fetch(`http://localhost:3001/users/${userId}`,
+        const response = await fetch(`http://localhost:10000/users/${userId}`,
             {
                 method: "GET",
                 headers: {Authorization: `Bearer ${token}`},
