@@ -45,7 +45,7 @@ const storage = multer.diskStorage({
 const upload = multer({storage});
 
 app.use((req, res, next) => {
-    res.header('Access-Control-Allow-Origin', 'https://agora-pedia-client-8rrc9k567-agorangelale.vercel.app/');
+    res.header('Access-Control-Allow-Origin', 'https://agora-pedia-client-8rrc9k567-agorangelale.vercel.app');
     res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
     next();
   });
