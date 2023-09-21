@@ -43,7 +43,7 @@ export const register = async (req, res)=> {
 /** LOGGING IN */
 export const login = async (req, res) => {
     try{
-        req.Header("Access-Control-Allow-Origin", "https://agora-pedia-client-8rrc9k567-agorangelale.vercel.app/")
+        req.Header("Access-Control-Allow-Origin", "https://agora-pedia-client-8rrc9k567-agorangelale.vercel.app")
         const {email, password} = req.body;
         const user = await User.findOne({email: email});
         if(!user) {
