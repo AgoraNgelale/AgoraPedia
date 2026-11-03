@@ -1,5 +1,6 @@
-import { BrowserRouter, Navigate, Routes, Route } from "react-router-dom";
+import { HashRouter, Navigate, Routes, Route } from "react-router-dom";
 import HomePage from "scenes/homePage";
+import DemoPage from "./scenes/demoPage";
 import LoginPage from "scenes/loginPage";
 import ProfilePage from "scenes/profilePage";
 import { useMemo } from "react";
@@ -13,18 +14,19 @@ function App() {
   const isAuth = Boolean(useSelector((state)=> state.token));
   return (
     <div className="app">
-      <BrowserRouter>
+      <HashRouter>
       <ThemeProvider theme ={theme}>
         <CssBaseline/>
         <Routes>
-          <Route path = "/" element = {<LoginPage/>}/>
-          <Route path = "/home" element = {isAuth?<HomePage/>: <Navigate to = "/"/>}/>
+          <Route path = "/" element = {<DemoPage/>}/>
+          <Route path="/login" element={<LoginPage/>}/>
+          <Route path = "/home" element = {isAuth?<HomePage/>: <Navigate to = "/login"/>}/>
           <Route path = "/profile/:userId" element = {isAuth?<ProfilePage/>: <Navigate to ="/"/>}/>
 
         </Routes>
       </ThemeProvider>
         
-      </BrowserRouter>
+      </HashRouter>
     </div>
   );
 }
